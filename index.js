@@ -13,4 +13,9 @@ app.post('/todo', (req, res) => {
     res.send(task);
 })
 
+app.get('/todo/:id', (req, res) => { 
+    const id = req.params.id;
+    res.send(tasks[id])
+})
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
