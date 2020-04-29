@@ -18,4 +18,11 @@ app.get('/todo/:id', (req, res) => {
     res.send(tasks[id])
 })
 
+app.put('/todo/:id', (req, res) => {
+    const id = req.params.id;
+    const task = req.body.task;
+    tasks[id] = task;
+    res.send(task);
+})
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
