@@ -25,4 +25,10 @@ app.put('/todo/:id', (req, res) => {
     res.send(task);
 })
 
+app.delete('/todo/:id', (req, res) => {
+    const id = req.params.id;
+    res.send(tasks.splice(id, 1));
+})
+
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
